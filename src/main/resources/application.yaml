@@ -1,0 +1,21 @@
+# \u7981\u7528\u7F13\u5B58
+spring:
+  thymeleaf:
+    cache: false
+
+  # \u6570\u636E\u5E93\u8FDE\u63A5\u914D\u7F6E
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/seckill?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+
+# mybatis-plus\u914D\u7F6E
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.example.seckill
+
+# \u65E5\u5FD7\u914D\u7F6E
+logging:
+  level:
+    com.example.seckill: debug
