@@ -15,17 +15,17 @@ public class MD5Util {
     }
 
     //盐值
-    private static final String salt = "a12b3c4d";
+    private static final String salt = "1a2b3c4d";
 
     //第一次加密
     public static String inputPassToFormPass(String inputPass){
-        String str = salt.charAt(0)+salt.charAt(1)+inputPass+salt.charAt(4)+salt.charAt(5);
+        String str = "" + salt.charAt(0)+salt.charAt(2)+inputPass+salt.charAt(4)+salt.charAt(5);
         return md5(str);
     }
 
     //第二次加密
     public static String formPassToDBPass(String formPass,String salt){
-        String str = salt.charAt(0)+salt.charAt(1)+formPass+salt.charAt(4)+salt.charAt(5);
+        String str = "" + salt.charAt(0)+salt.charAt(2)+formPass+salt.charAt(4)+salt.charAt(5);
         return md5(str);
     }
 
@@ -38,7 +38,7 @@ public class MD5Util {
 
     public static void main(String[] args) {
         System.out.println(inputPassToFormPass("123456"));
-        System.out.println(formPassToDBPass("761e0c4f27fff7766114a80b1bdbf74e","a12b3c4d"));
-        System.out.println(inputPassToDBPass("123456","a12b3c4d"));
+        System.out.println(formPassToDBPass("f2266f92e31d032983464ea05d6fb4e4","1a2b3c4d"));
+        System.out.println(inputPassToDBPass("123456","1a2b3c4d"));
     }
 }
